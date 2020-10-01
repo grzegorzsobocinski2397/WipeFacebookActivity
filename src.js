@@ -8,8 +8,7 @@ let POPUP_BOX_SELECTOR = ".j34wkznp.qp9yad78.pmk7jnqg.kr520xx4";
 // Container of the activity.
 let ACTIVITY_DIV_SELECTOR = ".aov4n071 > .kvgmc6g5 > .l9j0dhe7";
 // Icon inside the container. Opens up a popup with actions.
-let ACTIVITY_ICON_SELECTOR =
-  ".l9j0dhe7 .hu5pjgll.lzf7d6o1.sp_fDmBvoTd0yc_1_5x.sx_8f4ba6";
+let ACTIVITY_ICON_SELECTOR = ".l9j0dhe7 .hu5pjgll.lzf7d6o1.sp_fDmBvoTd0yc_1_5x.sx_8f4ba6";
 // Icon for 'remove' action.
 let TRASH_ICON_SELECTOR = ".hu5pjgll.lzf7d6o1.sp_iAK0KBqKNuh_1_5x.sx_6afae4";
 // Icon for 'remove like' action.
@@ -17,8 +16,7 @@ let LIKE_ICON_SELECTOR = ".hu5pjgll.lzf7d6o1.sp_qcW4BCmTZXW_1_5x.sx_abe26e";
 // Icon for 'hide from timeline' action.
 let HIDE_ICON_SELECTOR = ".hu5pjgll.lzf7d6o1.sp_OuY-57YF-w7_1_5x.sx_036ca2";
 // Icon for 'remove vote' action.
-let REMOVE_VOTE_ICON_SELECTOR =
-  ".hu5pjgll.lzf7d6o1.sp_qcW4BCmTZXW_1_5x.sx_4fcb3d";
+let REMOVE_VOTE_ICON_SELECTOR = ".hu5pjgll.lzf7d6o1.sp_qcW4BCmTZXW_1_5x.sx_4fcb3d";
 // Button inside of the dialog window that shows up when there was a bad request.
 let ERROR_BUTTON_SELECTOR =
   ".oajrlxb2.s1i5eluu.qu0x051f.esr5mh6w.e9989ue4.r7d6kgcz.rq0escxv.nhd2j8a9.pq6dq46d.p7hjln8o.kvgmc6g5.cxmmr5t8.oygrvhab.hcukyx3x.cxgpxx05.d1544ag0.sj5x9vvc.tw6a2znq.oqcyycmt.esuyzwwr.f1sip0of.lzcic4wl.l9j0dhe7.abiwlrkh.p8dawk7l.ehryuci6.bp9cbjyn.beltcj47.p86d2i9g.aot14ch1.kzx2olss.rt8b4zig.n8ej3o3l.agehan2d.sk4xxmp2.lrazzd5p.gigivrx4.sf5mxxl7.g0qnabr5.lrwzeq9o.iqfcb0g7.lsqurvkf.id6903cd.jq4qci2q.m5l1wtfr.taijpn5t.sn7ne77z.oqhjfihn.bwm1u5wc";
@@ -77,9 +75,7 @@ function handleAction() {
   const trashIconElement = document.querySelector(TRASH_ICON_SELECTOR);
   const likeIconElement = document.querySelector(LIKE_ICON_SELECTOR);
   const hideIconElement = document.querySelector(HIDE_ICON_SELECTOR);
-  const removeVoteIconElement = document.querySelector(
-    REMOVE_VOTE_ICON_SELECTOR
-  );
+  const removeVoteIconElement = document.querySelector(REMOVE_VOTE_ICON_SELECTOR);
 
   if (trashIconElement !== null) {
     clickRemoveIcon(trashIconElement);
@@ -108,17 +104,12 @@ function clickRemoveIcon(trashIconElement) {
  * Click hide icon, which is a toggle. Remove the container box.
  */
 function clickHideIcon(hideIconElement) {
-  const isVisible =
-    hideIconElement
-      .closest(GRANDPARENT_ICON_SELECTOR)
-      .querySelector(ACTION_TEXT_SELECTOR).innerText === "Hide from Timeline";
+  const isVisible = hideIconElement.closest(GRANDPARENT_ICON_SELECTOR).querySelector(ACTION_TEXT_SELECTOR).innerText === "Hide from Timeline";
   if (isVisible) {
     hideIconElement.click();
   }
 
-  const message = isVisible
-    ? "Activity is hidden."
-    : "Activity already hidden. Skipping.";
+  const message = isVisible ? "Activity is hidden." : "Activity already hidden. Skipping.";
   logMessage(message);
   removeActivityContainer();
   removePopup(hideIconElement);
