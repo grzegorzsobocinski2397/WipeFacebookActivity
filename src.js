@@ -109,7 +109,7 @@ function clickHideIcon(hideIconElement) {
     hideIconElement.click();
   }
 
-  const message = isVisible ? "Activity is hidden." : "Activity already hidden. Skipping.";
+  const message = isVisible ? "Activity hidden." : "Activity already hidden. Skipping.";
   logMessage(message);
   removeActivityContainer();
   removePopup(hideIconElement);
